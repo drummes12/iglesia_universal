@@ -1,38 +1,34 @@
-import { Image, Dimensions, StyleSheet } from 'react-native'
+import { Image, Dimensions, StyleSheet, Text } from 'react-native'
 import Constans from 'expo-constants'
+import { useFonts } from 'expo-font';
 
 const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
 
 const styles = StyleSheet.create({
-  imgWelcome: {
-    marginLeft: 25,
-    marginTop: Constans.statusBarHeight,
-    width: windowWidth - 50,
-    height: windowHeight,
-    resizeMode: 'contain',
+  textLogo: {
+    fontSize: 100,
+    color: 'rgb(90, 70, 123)',
+    fontWeight: 'bold',
+    lineHeight: 55,
+    letterSpacing: -10,
+    paddingTop: 60,
+    margin: 20,
   },
-  imgLogo: {
-    marginLeft: 25,
-    marginTop: Constans.statusBarHeight,
-    width: windowWidth - 50,
-    height: 150,
-    resizeMode: 'contain',
-  }
 })
 
-const Welcome = (props) => {
-  const Logo =
-    '../../assets/logo.png';
-  const logoStyles = [
-    styles.imgWelcome,
-    props.Logo && styles.imgLogo
-  ]
+const Welcome = () => {
+  const [fontsLoaded] = useFonts({
+    'arial': require('../../assets/fonts/arial.ttf'),
+  });
+  
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <Image
-      source={require(Logo)}
-      style={logoStyles}
-    />
+    <Text style={{...styles.textLogo, fontFamily: 'arial' }}>
+      red{'\n'} aleluya
+    </Text>
   )
 }
 

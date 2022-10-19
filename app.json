@@ -7,8 +7,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/logo.png",
-      "resizeMode": "contain",
+      "image": "./assets/splashImage.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.iglesiauniversal.iglesiauniversal"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,11 @@
     },
     "web": {
       "favicon": "./assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "92b58cd7-f775-4657-9edc-3334b113a4e9"
+      }
     }
   }
 }
