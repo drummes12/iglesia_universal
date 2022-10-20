@@ -1,18 +1,13 @@
-import { Image, Dimensions, StyleSheet, Text } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import Constans from 'expo-constants'
 import { useFonts } from 'expo-font';
 
-const windowWidth = Dimensions.get('window').width
-
 const styles = StyleSheet.create({
-  textLogo: {
-    fontSize: 100,
-    color: 'rgb(90, 70, 123)',
-    fontWeight: 'bold',
-    lineHeight: 55,
-    letterSpacing: -10,
-    paddingTop: 60,
-    margin: 20,
+  logo: {
+    width: '100%',
+    height: 200,
+    marginTop: Constans.statusBarHeight,
+    resizeMode: 'contain',
   },
 })
 
@@ -26,9 +21,10 @@ const Welcome = () => {
   }
 
   return (
-    <Text style={{...styles.textLogo, fontFamily: 'arial' }}>
-      red{'\n'} aleluya
-    </Text>
+    <Image
+      source={require('../../assets/logo_ra.png')}
+      style={styles.logo}
+    />
   )
 }
 
