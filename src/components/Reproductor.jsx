@@ -60,6 +60,13 @@ const Reproductor = () => {
 
   useEffect(() => {
     ;(async () => {
+      await Audio.setAudioModeAsync({
+        staysActiveInBackground: true,
+        playsInSilentModeIOS: true,
+        shouldDuckAndroid: true,
+        playThroughEarpieceAndroid: false
+      })
+      
       if (audioStatus) {
         await sound.loadAsync({
           uri: 'https://iuniversal-colive.logicideas.media/iUniversal-radio/radio.stream/playlist.m3u8',
